@@ -1,0 +1,1 @@
+CONN_STRING = "Driver={ODBC Driver 17 for SQL Server};Server=mssql-server-name.database.windows.net;Database=database-name;Uid=userid@mssql-server-name;Pwd=password;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
