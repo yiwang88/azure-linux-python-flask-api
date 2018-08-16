@@ -1,4 +1,4 @@
-FROM python:2.7-stretch
+FROM python:2.7-slim-stretch
 
 COPY . /opt
 
@@ -13,6 +13,8 @@ RUN apt-get update \
         g++ \
         build-essential \
         apt-transport-https \
+        curl \
+        gnupg \
     && echo "$SSH_PASSWD" | chpasswd \
     && chmod 755 /opt/init_container.sh
 
