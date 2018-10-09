@@ -3,6 +3,7 @@ from flask_restful import Resource, Api, reqparse, fields, marshal
 import pyodbc
 import config
 import json
+import logging
 
 app = Flask(__name__)
 api = Api(app)
@@ -37,6 +38,8 @@ class AzureSQLDatabase(object):
 
 class HelloWorld(Resource):
     def get(self):
+        logging.basicConfig(filename='/home/LogFiles/myapp.log', filemode='w', format='%(name)s - %(levelname)s, %(message)s')
+        logging.warning('This will get logged in file')
         return {'message': 'Hello world!!'}
 
 class HelloWorldv2(Resource):
