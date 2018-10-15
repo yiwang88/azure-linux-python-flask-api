@@ -52,7 +52,7 @@ class HelloWorld(Resource):
         
         logging.basicConfig(filename='/home/LogFiles/myapp.log', filemode='w', format='%(name)s - %(levelname)s, %(message)s')
         logging.warning('This will get logged in file')
-        return {'message': 'Hello world!!'}
+        return {'message': 'Hello world from me!!'}
 
 class HelloWorldv2(Resource):
     def get(self):
