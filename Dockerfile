@@ -28,6 +28,7 @@ RUN ACCEPT_EULA=y apt-get install -y mssql-tools
 RUN apt-get install -y unixodbc-dev
 
 RUN pip install flask flask_restful pyodbc
+RUN pip install applicationinsights
 
 EXPOSE 2222 8080
 
