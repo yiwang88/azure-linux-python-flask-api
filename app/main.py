@@ -41,7 +41,8 @@ class AzureSQLDatabase(object):
 class HelloWorld(Resource):
     def get(self):
         # set up logging
-        enable('29c9677a-bf5d-4d42-a88c-c6cbb4cb952f')
+        # enable('29c9677a-bf5d-4d42-a88c-c6cbb4cb952f')
+        enable('43fd2869-a1d1-454d-a151-926f64f4a230')
 
         # log something (this will be sent to the Application Insights service as a trace)
         logging.info('This is a message to app insight')
