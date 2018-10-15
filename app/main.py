@@ -4,6 +4,8 @@ import pyodbc
 import config
 import json
 import logging
+from applicationinsights.logging import enable
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -38,6 +40,15 @@ class AzureSQLDatabase(object):
 
 class HelloWorld(Resource):
     def get(self):
+        # set up logging
+        enable('<YOUR INSTRUMENTATION KEY GOES HERE>')
+
+        # log something (this will be sent to the Application Insights service as a trace)
+        logging.info('This is a message to app insight')
+
+        # logging shutdown will cause a flush of all un-sent telemetry items
+        logging.shutdown()
+        
         logging.basicConfig(filename='/home/LogFiles/myapp.log', filemode='w', format='%(name)s - %(levelname)s, %(message)s')
         logging.warning('This will get logged in file')
         return {'message': 'Hello world!!'}
